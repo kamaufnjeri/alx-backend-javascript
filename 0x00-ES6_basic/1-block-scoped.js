@@ -1,12 +1,11 @@
-/* disable-eslint */
-export default function taskBlock(trueOrFalse) {
-  const task = false;
-  const task2 = true;
+export default function taskBlock (trueOrFalse) {
+  const task = false // eslint-disable-line no-unused-vars
+  const task2 = true // eslint-disable-line no-unused-vars
 
   if (trueOrFalse) {
-    const task = true;  // Inner scope variable (shadows the outer variable)
-    const task2 = false;  // Inner scope variable (shadows the outer variable)
+    const task = true // eslint-disable-line no-unused-vars
+    const task2 = false // eslint-disable-line no-unused-vars
   }
-  
-  return [task, task2];  // Returns the outer scope variables, not the ones inside the if block
+
+  return [task, task2]
 }
