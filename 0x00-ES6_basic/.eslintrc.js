@@ -22,5 +22,9 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-    }
+        semi: ['error', 'always'],
+
+    // Disallow space between function name and opening parenthesis
+        'space-before-function-paren': ['error', 'never'],
+  },
 }
