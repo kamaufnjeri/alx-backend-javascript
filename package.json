@@ -1,0 +1,20 @@
+{
+  "name": "alx-backend-javascript",
+  "version": "1.0.0",
+  "description": "ALX short specialization projects for backend Javascipt ES6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/kamaufnjeri/alx-backend-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kamaufnjeri/alx-backend-javascript/issues"
+  },
+  "homepage": "https://github.com/kamaufnjeri/alx-backend-javascript#readme"
+}
