@@ -1,3 +1,4 @@
+/* disable-eslint */
 export default function taskBlock(trueOrFalse) {
   const task = false; // Outer scope variable
   const task2 = true;  // Outer scope variable
