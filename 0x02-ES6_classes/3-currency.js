@@ -1,11 +1,16 @@
 export default class Currency {
   constructor(code, name) {
-    if (typeof code && typeof name === 'string') {
-      this._code = code;
+    if (typeof name === 'string') {
       this._name = name;
     } else {
-      throw new TypeError('Attributes must be string');
+      throw new TypeError('Name must be a string');
     }
+
+    if (typeof code === 'string') {
+        this._code = code;
+      } else {
+        throw new TypeError('Code must be a string');
+      }
   }
 
   displayFullCurrency() {

@@ -5,12 +5,12 @@ export default class Pricing {
     if (typeof amount === 'number') {
       this._amount = amount;
     } else {
-        throw new TypeError("Amount must be number")
+      throw new TypeError('Amount must be number');
     }
     if (currency instanceof Currency) {
       this._currency = currency;
     } else {
-        throw new TypeError("Currency must be of class Currency")
+      throw new TypeError('Currency must be of class Currency');
     }
   }
 
@@ -28,7 +28,7 @@ export default class Pricing {
     if (typeof amount === 'number') {
       this._amount = amount;
     } else {
-        throw new TypeError("Amount must be a number")
+      throw new TypeError('Amount must be a number');
     }
   }
 
@@ -36,7 +36,7 @@ export default class Pricing {
     if (currency instanceof Currency) {
       this._currency = currency;
     } else {
-        throw new TypeError("Currency must be of class Currency")
+      throw new TypeError('Currency must be of class Currency');
     }
   }
 
@@ -49,10 +49,10 @@ export default class Pricing {
   static convertPrice(amount, conversionRate) {
     if (typeof amount && conversionRate === 'number') {
       return amount * conversionRate;
-    } else if (typeof amount !== "number") {
-        throw new TypeError("Amount must be a number")
-    } else if (typeof conversionRate !== "number") {
-        throw new TypeError("Conversion Ratio must be a number")
+    } if (typeof amount !== 'number') {
+      throw new TypeError('Amount must be a number');
+    } else if (typeof conversionRate !== 'number') {
+      throw new TypeError('Conversion Ratio must be a number');
     }
     return null;
   }
