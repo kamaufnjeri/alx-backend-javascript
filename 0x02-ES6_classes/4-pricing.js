@@ -47,13 +47,12 @@ export default class Pricing {
 
   // static method
   static convertPrice(amount, conversionRate) {
-    if (typeof amount && conversionRate === 'number') {
-      return amount * conversionRate;
-    } if (typeof amount !== 'number') {
+    if (typeof amount !== 'number') {
       throw new TypeError('Amount must be a number');
-    } else if (typeof conversionRate !== 'number') {
+    }
+    if (typeof conversionRate !== 'number') {
       throw new TypeError('Conversion Ratio must be a number');
     }
-    return null;
+    return amount * conversionRate;
   }
 }
