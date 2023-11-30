@@ -23,8 +23,4 @@ export default class Building {
       throw new TypeError('sqft must be a number');
     }
   }
-
-  evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
-  }
 }
