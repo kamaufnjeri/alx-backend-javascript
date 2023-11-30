@@ -44,7 +44,8 @@ export default class Car {
         }
     }
 
-    cloneCar() {
-        return new Car();
-    }
+     cloneCar() {
+    const clonedCar = new this.constructor();
+    return clonedCar;
+  }
 }
