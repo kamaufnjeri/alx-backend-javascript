@@ -29,6 +29,7 @@ const countStudents = (filePath) => {
         });
         Object.keys(fieldsDict).forEach(field => {
             const names = fieldsDict[field];
+            console.log(names);
             console.log(`Number of students in ${field}: ${names.length}. List: ${names}`);
         })
     } catch (err) {
