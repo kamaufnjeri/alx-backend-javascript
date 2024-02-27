@@ -1,41 +1,32 @@
 const fs = require('fs');
 
-/** function to count student */
-function countStudents(filePath) {
-    try {
-        const data = fs.readFileSync(filePath, 'utf-8');
+function countStudents(path) {
+  try {
+    const data = fs.readFileSync(path, 'utf8');
+    const lines = data.split('\n').filter((line) => line.trim() !== '');
 
-        const lines = data.split('\n').filter(line => line.trim() !== "");
-        const studentlist =[];
-        const headers = lines[0].replace(/\r/g, "").split(",");
+    const students = lines.slice(1).map((line) => line.split(','));
+    const totalCount = students.length;
 
-        lines.slice(1).forEach((line) => {
-            const databaseDict = {};
-            const lineitems = line.replace(/\r/g, '').split(",");
-            lineitems.forEach((item, index) => {
-                databaseDict[headers[index]] = item;
-            });
-            studentlist.push(databaseDict);
-        });
-        console.log(`Number of students: ${studentlist.length}`);
+    const fields = {};
+    students.forEach((student) => {
+      const field = student[3];
+      if (Object.prototype.hasOwnProperty.call(fields, field)) {
+        fields[field].push(student[0]);
+      } else {
+        fields[field] = [student[0]];
+      }
+    });
 
-        const fieldsDict = {};
-        studentlist.forEach(student => {
-            const {firstname, field} = student;
-
-            if (!(field in fieldsDict)) {
-                fieldsDict[field] = [];
-            }
-            fieldsDict[field].push(firstname);
-        });
-        Object.keys(fieldsDict).forEach(field => {
-            const names = fieldsDict[field].join(', ');
-            console.log(`Number of students in ${field}: ${fieldsDict[field].length}. List: ${names}`);
-        })
-    } catch (err) {
-        console.log(err)
-        throw new Error('Cannot load the database');
+    console.log(`Number of students: ${totalCount}`);
+    for (const field in fields) {
+      if (Object.prototype.hasOwnProperty.call(fields, field)) {
+        console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+      }
     }
-};
+  } catch (error) {
+    throw new Error('Cannot load the database');
+  }
+}
 
 module.exports = countStudents;
