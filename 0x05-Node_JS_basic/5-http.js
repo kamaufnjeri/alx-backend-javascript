@@ -57,6 +57,9 @@ const app = http.createServer(async (req, res) => {
     res.statusCode = 200;
     res.end('Hello Holberton School!');
   } else if (url === '/students') {
+    if (!database) {
+      res.end('Cannot load the database')
+    }
     try {
       const student = await countStudents(database);
       res.statusCode = 200;
