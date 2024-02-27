@@ -51,23 +51,26 @@ const args = process.argv;
 const database = args[2];
 const app = http.createServer(async (req, res) => {
   const { url } = req;
-  res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
 
   if (url === '/') {
+    res.statusCode = 200;
     res.end('Hello Holberton School!');
   } else if (url === '/students') {
     try {
       const student = await countStudents(database);
+      res.statusCode = 200;
       res.end(`This is the list of our students\n${student.join('\n')}`);
     } catch (err) {
+      res.statusCode = 500;
       res.end(err.message);
     }
   } else {
     res.statusCode = 404;
-    res.end('Cannot load the database');
+    res.end('Not Found');
   }
 });
 
 app.listen(port, hostname);
+
 module.exports = app;
