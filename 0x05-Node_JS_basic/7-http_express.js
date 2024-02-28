@@ -40,7 +40,6 @@ function countStudents(filePath) {
           });
           resolve(studentsData); // Resolve the Promise
         } catch (error) {
-          console.error(error);
           reject(new Error('Error processing data'));
         }
       }

@@ -37,8 +37,7 @@ function countStudents(filePath) {
           });
           resolve(studentsData); // Resolve the Promise
         } catch (error) {
-          console.error(error);
-          reject(new Error('Error processing data'));
+          reject(new Error('Cannot load the database'));
         }
       }
     });
