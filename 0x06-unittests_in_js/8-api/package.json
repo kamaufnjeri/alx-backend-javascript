@@ -1,13 +1,13 @@
 {
   "name": "8-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple API for learning basic integration testing in NodeJS.",
+  "main": "api.js",
+  "private": true,
+  "license": "MIT",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "node ./node_modules/mocha/bin/mocha"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
   },
