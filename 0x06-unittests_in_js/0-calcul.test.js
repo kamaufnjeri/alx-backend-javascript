@@ -31,6 +31,6 @@ describe('Test Suite for calculateNumber function', () => {
   });
 
   it('Should round down a and b floating point fractional numbers with trailing 9\'s and sum: 4.4999 + 6.499999', () => {
-    assert.strictEqual(calculateNumber(4.4999, 6.499999), 11);
+    assert.strictEqual(calculateNumber(4.4999, 6.499999), 10);
   });
 });
